@@ -1,10 +1,10 @@
 export const fonts = {
 
     // Primary Font
-    appFont1Regular: 'Poppins-Regular.ttf',
-    appFont1Light: 'Poppins-Light.ttf',
-    appFont1Medium: 'Poppins-Medium.ttf',
-    appFont1Bold: 'Poppins-Bold.ttf',
+    appFont1Regular: 'Roboto-Regular.ttf',
+    appFont1Light: 'Roboto-Light.ttf',
+    appFont1Medium: 'Roboto-Medium.ttf',
+    appFont1Bold: 'Roboto-Bold.ttf',
     // Secondary Font
     appFont2Regular: 'Poppins-Regular.ttf',
     appFont2Medium: 'Poppins-Medium.ttf',
