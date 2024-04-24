@@ -53,7 +53,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Poppins-Bold.ttf</string>
+	<string>Poppins-Bold.ttf</string>
 		<string>Poppins-ExtraBold.ttf</string>
 		<string>Poppins-Light.ttf</string>
 		<string>Poppins-Medium.ttf</string>
@@ -62,9 +62,6 @@
 		<string>Roboto-Light.ttf</string>
 		<string>Roboto-Medium.ttf</string>
 		<string>Roboto-Regular.ttf</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
