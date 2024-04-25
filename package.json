@@ -13,6 +13,7 @@
     "react": "18.2.0",
     "react-native": "0.71.6",
     "react-native-dimension": "^1.0.6",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-vector-icons": "^10.0.3"
   },
   "devDependencies": {
