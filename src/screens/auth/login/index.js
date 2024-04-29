@@ -1,17 +1,23 @@
 import React from 'react'
-import { View, Text, StyleSheet, ImageBackground, Image, TextInput, Pressable, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Image, TextInput, Pressable, ScrollView, KeyboardAvoidingView, Platform } from 'react-native'
 import { appImages, colors, fontSizes, fonts } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
 import LinearGradient from 'react-native-linear-gradient'
+import Texts from '../../../components/texts'
 
 export default function Index() {
     return (
+        // Wrapper
         <View style={styles.mainContainer}>
             <ImageBackground
                 source={appImages.background_1}
                 style={styles.imageBgContainer}
             >
-                <KeyboardAvoidingView>
+                {/* Scroll View */}
+                <KeyboardAvoidingView
+                    style={{ flex: 1 }}
+                    behavior={Platform.OS === 'ios' ? 'padding' : null}
+                >
                     <ScrollView>
                         <View style={{ height: height(10) }} />
                         <View style={{ alignItems: 'center' }}>
@@ -24,7 +30,8 @@ export default function Index() {
                         {/* Spacer */}
                         <View style={{ height: height(10) }} />
                         {/* Top Text */}
-                        <Text style={[styles.topText, { textAlign: 'center' }]}>Enter your phone number to log in!</Text>
+                        <Texts isMedium style={[{ color: colors.appColor1, textAlign: 'center' }]}>Enter your phone number to log in!</Texts>
+                        {/* <Text style={[styles.topText, { textAlign: 'center' }]}>Enter your phone number to log in!</Text> */}
                         {/* Spacer */}
                         <View style={{ height: height(2.5) }} />
                         {/* Text Input */}
@@ -45,11 +52,16 @@ export default function Index() {
                         <View style={{ height: height(2.5) }} />
                         {/* Bottom Text */}
                         <View style={{ marginHorizontal: width(10) }}>
-                            <Text style={[styles.bottomText, { textAlign: 'right' }]}>
+                            <Texts isSmall textColor5 style={[{ textAlign: 'right' }]}>
+                                Do not have an account?
+                                {' '}
+                                <Texts font2Bold>Create</Texts>
+                            </Texts>
+                            {/* <Text style={[styles.bottomText, { textAlign: 'right' }]}>
                                 Do not have an account?
                                 {' '}
                                 <Text style={[{ fontFamily: fonts.appFont2Bold, color: colors.appTextColor5 }]}>Create</Text>
-                            </Text>
+                            </Text> */}
                         </View>
                         {/* Spacer */}
                         <View style={{ height: height(5) }} />
