@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ImageBackground, Image, TextInput, Pressable, S
 import { appImages, colors, fontSizes, fonts } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
 import LinearGradient from 'react-native-linear-gradient'
-import Texts from '../../../components/texts'
+import { Buttons, Scrollviews, Spacer, Textinputs, Texts } from '../../../components'
 
 export default function Index() {
     return (
@@ -14,77 +14,48 @@ export default function Index() {
                 style={styles.imageBgContainer}
             >
                 {/* Scroll View */}
-                <KeyboardAvoidingView
-                    style={{ flex: 1 }}
-                    behavior={Platform.OS === 'ios' ? 'padding' : null}
-                >
-                    <ScrollView>
-                        <View style={{ height: height(10) }} />
-                        <View style={{ alignItems: 'center' }}>
-                            <Image
-                                source={appImages.logo_1}
-                                style={styles.logo}
-                                resizeMode='contain'
-                            />
-                        </View>
-                        {/* Spacer */}
-                        <View style={{ height: height(10) }} />
-                        {/* Top Text */}
-                        <Texts isMedium style={[{ color: colors.appColor1, textAlign: 'center' }]}>Enter your phone number to log in!</Texts>
-                        {/* <Text style={[styles.topText, { textAlign: 'center' }]}>Enter your phone number to log in!</Text> */}
-                        {/* Spacer */}
-                        <View style={{ height: height(2.5) }} />
-                        {/* Text Input */}
-                        <View style={{ marginHorizontal: width(7.5), backgroundColor: colors.appColor1, borderRadius: 10, paddingHorizontal: width(2.5) }}>
-                            <Text style={{ fontSize: fontSizes.tiny, /*backgroundColor: 'green'*/ fontFamily: fonts.appFont1Bold, color: colors.appTextColor2, paddingTop: height(1) }}>Phone</Text>
-                            <TextInput
-                                value='0973-4444-52899'
-                                style={{
-                                    height: height(5),
-                                    fontFamily: fonts.appFont1Regular,
-                                    fontSize: fontSizes.small,
-                                    color: colors.appTextColor3
-                                    // backgroundColor:'red'
-                                }}
-                            />
-                        </View>
-                        {/* Spacer */}
-                        <View style={{ height: height(2.5) }} />
-                        {/* Bottom Text */}
-                        <View style={{ marginHorizontal: width(10) }}>
-                            <Texts isSmall textColor5 style={[{ textAlign: 'right' }]}>
-                                Do not have an account?
-                                {' '}
-                                <Texts font2Bold>Create</Texts>
-                            </Texts>
-                            {/* <Text style={[styles.bottomText, { textAlign: 'right' }]}>
-                                Do not have an account?
-                                {' '}
-                                <Text style={[{ fontFamily: fonts.appFont2Bold, color: colors.appTextColor5 }]}>Create</Text>
-                            </Text> */}
-                        </View>
-                        {/* Spacer */}
-                        <View style={{ height: height(5) }} />
-                        {/* Button */}
-                        <Pressable style={{ marginHorizontal: width(20) }}>
-                            <LinearGradient
-                                //          Top     Left             Top    Right
-                                start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 0.0 }}
-                                // locations={[0.5, 0.5]}
-                                colors={colors.appGradient1}
-                                useAngle={true} // Enabling Angle
-                                angle={90}  // Gradient 90 degree Angle
-                                angleCenter={{ x: 0.5, y: 0.5 }}    // Gradient starts at center of button
-                                style={{ height: height(6), borderRadius: 100, alignItems: 'center', justifyContent: 'center' }}>
-                                <Text style={styles.buttonText}>
-                                    LUBE ME UP!
-                                </Text>
-                            </LinearGradient>
-                        </Pressable>
-                        {/* Spacer */}
-                        <View style={{ height: height(5) }} />
-                    </ScrollView>
-                </KeyboardAvoidingView>
+                <Scrollviews.KeyboardAvoiding>
+                    <Spacer height={height(10)} />
+                    <View style={{ alignItems: 'center' }}>
+                        <Image
+                            source={appImages.logo_1}
+                            style={styles.logo}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    {/* Spacer */}
+                    <Spacer isLarge />
+                    <Spacer isLarge />
+                    {/* Top Text */}
+                    <Texts isMedium style={[{ color: colors.appColor1, textAlign: 'center' }]}>Enter your phone number to log in!</Texts>
+                    {/* Spacer */}
+                    <Spacer isBasic />
+                    {/* Text Input */}
+                    <Textinputs.Colored
+                        title={'Phone'}
+                        value={'0973-4444-52899'}
+                        onChangeText={() => { }}
+                    />
+                    {/* Spacer */}
+                    <Spacer isBasic />
+                    {/* Bottom Text */}
+                    <View style={{ marginHorizontal: width(10) }}>
+                        <Texts isSmall textColor5 style={[{ textAlign: 'right' }]}>
+                            Do not have an account?
+                            {' '}
+                            <Texts font2Bold>Create</Texts>
+                        </Texts>
+                    </View>
+                    {/* Spacer */}
+                    <Spacer height={height(10)} />
+                    {/* Button */}
+                    <Buttons.ColoredGradient
+                        title={'LUBE ME UP!'}
+                        onPress={() => { console.log('Pressed') }}
+                    />
+                    {/* Spacer */}
+                    <Spacer isLarge />
+                </Scrollviews.KeyboardAvoiding>
             </ImageBackground>
         </View>
     )
