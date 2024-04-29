@@ -73,4 +73,55 @@ export const appStyles = StyleSheet.create({
         fontSize: fontSizes.xTiny,
         fontFamily: fonts.appFont1Regular,
     },
+    // Text Fonts 1
+    textFont1Regular: {
+        fontFamily: fonts.appFont1Regular
+    },
+    textFont1Light: {
+        fontFamily: fonts.appFont1Light
+    },
+    textFont1Medium: {
+        fontFamily: fonts.appFont1Medium
+    },
+    textFont1Bold: {
+        fontFamily: fonts.appFont1Bold
+    },
+    // Text Fonts 2
+    textFont2Regular: {
+        fontFamily: fonts.appFont2Regular
+    },
+    textFont2Light: {
+        fontFamily: fonts.appFont2Light
+    },
+    textFont2Medium: {
+        fontFamily: fonts.appFont2Medium
+    },
+    textFont2Bold: {
+        fontFamily: fonts.appFont2Bold
+    },
+    textFont2ExtraBold: {
+        fontFamily: fonts.appFont2ExtraBold
+    },
+    // Text Colors
+    textPrimaryColor: {
+        color: colors.appColor1
+    },
+    textSecondaryColor: {
+        color: colors.appColor2
+    },
+    textColor1: {
+        color: colors.appTextColor1
+    },
+    textColor2: {
+        color: colors.appTextColor2
+    },
+    textColor3: {
+        color: colors.appTextColor3
+    },
+    textColor4: {
+        color: colors.appTextColor4
+    },
+    textColor5: {
+        color: colors.appTextColor5
+    },
 })
