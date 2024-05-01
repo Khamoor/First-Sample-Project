@@ -5,7 +5,8 @@ import { height, width, totalSize } from 'react-native-dimension'
 import LinearGradient from 'react-native-linear-gradient'
 import { Buttons, Common, Scrollviews, Spacer, Textinputs, Texts, Wrapper } from '../../../components'
 
-export default function Index() {
+export default function Index({ navigation }) {
+    const { navigate } = navigation // Navigate Method provide by Navigation prop
     return (
         // Wrapper
         <Wrapper isMain>
@@ -48,7 +49,7 @@ export default function Index() {
                     {/* Button */}
                     <Buttons.ColoredGradient
                         title={'LUBE ME UP!'}
-                        onPress={() => { console.log('Pressed') }}
+                        onPress={() => { navigate('createAccount') }}   // When Button is Pressed it triggers navigation to the 'createAccount' screen
                     />
                     {/* Spacer */}
                     <Spacer isLarge />
