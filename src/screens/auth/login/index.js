@@ -3,16 +3,13 @@ import { View, Text, StyleSheet, ImageBackground, Image, TextInput, Pressable, S
 import { appImages, colors, fontSizes, fonts } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
 import LinearGradient from 'react-native-linear-gradient'
-import { Buttons, Scrollviews, Spacer, Textinputs, Texts } from '../../../components'
+import { Buttons, Common, Scrollviews, Spacer, Textinputs, Texts, Wrapper } from '../../../components'
 
 export default function Index() {
     return (
         // Wrapper
-        <View style={styles.mainContainer}>
-            <ImageBackground
-                source={appImages.background_1}
-                style={styles.imageBgContainer}
-            >
+        <Wrapper isMain>
+            <Common.BgImageWrapper>
                 {/* Scroll View */}
                 <Scrollviews.KeyboardAvoiding>
                     <Spacer height={height(10)} />
@@ -27,7 +24,7 @@ export default function Index() {
                     <Spacer isLarge />
                     <Spacer isLarge />
                     {/* Top Text */}
-                    <Texts isMedium style={[{ color: colors.appColor1, textAlign: 'center' }]}>Enter your phone number to log in!</Texts>
+                    <Texts isMedium font1Medium style={[{ color: colors.appColor1, textAlign: 'center' }]}>Enter your phone number to log in!</Texts>
                     {/* Spacer */}
                     <Spacer isBasic />
                     {/* Text Input */}
@@ -40,7 +37,7 @@ export default function Index() {
                     <Spacer isBasic />
                     {/* Bottom Text */}
                     <View style={{ marginHorizontal: width(10) }}>
-                        <Texts isSmall textColor5 style={[{ textAlign: 'right' }]}>
+                        <Texts isSmall textColor5 font2Light style={[{ textAlign: 'right' }]}>
                             Do not have an account?
                             {' '}
                             <Texts font2Bold>Create</Texts>
@@ -56,37 +53,14 @@ export default function Index() {
                     {/* Spacer */}
                     <Spacer isLarge />
                 </Scrollviews.KeyboardAvoiding>
-            </ImageBackground>
-        </View>
+            </Common.BgImageWrapper>
+        </Wrapper>
     )
 }
 
 const styles = StyleSheet.create({
-    mainContainer: {
-        flex: 1,
-    },
-    imageBgContainer: {
-        flex: 1,
-        height: null,
-        width: null,
-    },
     logo: {
         width: width(70),
         height: width(60),
-    },
-    topText: {
-        color: colors.appColor1,
-        fontSize: fontSizes.medium,
-        fontFamily: fonts.appFont1Medium,
-    },
-    bottomText: {
-        color: colors.appTextColor4,
-        fontSize: fontSizes.small,
-        fontFamily: fonts.appFont2Light,
-    },
-    buttonText: {
-        color: colors.appTextColor1,
-        fontSize: fontSizes.medium,
-        fontFamily: fonts.appFont1Bold,
     },
 })
