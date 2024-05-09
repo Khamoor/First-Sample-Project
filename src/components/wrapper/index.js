@@ -7,6 +7,7 @@ export default function Wrapper({
     flex,
     isMain,
     center,
+    style,
 }) {
     return (
         <View
@@ -15,7 +16,8 @@ export default function Wrapper({
                     flex: flex
                 },
                 isMain && appStyles.mainContainer,
-                center && appStyles.center
+                center && appStyles.center,
+                style
             ]}
         >
             {children}
