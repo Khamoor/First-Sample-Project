@@ -124,4 +124,56 @@ export const appStyles = StyleSheet.create({
     textColor5: {
         color: colors.appTextColor5
     },
+
+    // Shadows
+    shadowExtralight:{
+        shadowColor: "#00000080",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 3.0,
+        elevation: 1.5,
+    },
+    shadowLight: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 3.5,
+        elevation: 3,
+    },
+    shadow: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    shadowDark: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.425,
+        shadowRadius: 8.27,
+        elevation: 10,
+    },
+    shadowExtraDark: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
+    },
 })
