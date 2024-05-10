@@ -2,7 +2,7 @@ export const colors = {
     appGradient1: ['#FFFFFF', '#FFFFCC'],   // Gradient from White to Light Yellow
     // App Colors
     appColor1: '#FFFFC8',   // Light Yellow
-    appColor2: '#FFFFC8',
+    appColor2: '#FFFFCC',
 
     // Text Colors
     appTextColor1: '#000000',   // Black
