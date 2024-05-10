@@ -118,15 +118,18 @@ export const appStyles = StyleSheet.create({
     textColor3: {
         color: colors.appTextColor3
     },
-    textColor4: {
+    textWhite: {
         color: colors.appTextColor4
     },
     textColor5: {
         color: colors.appTextColor5
     },
+    textColor6: {
+        color: colors.appTextColor6
+    },
 
     // Shadows
-    shadowExtralight:{
+    shadowExtralight: {
         shadowColor: "#00000080",
         shadowOffset: {
             width: 0,
