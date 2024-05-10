@@ -27,8 +27,8 @@ export default function Texts({
     textColor1,
     textColor2,
     textColor3,
-    textColor4,
     textColor5,
+    textColor6,
 
     font1Regular,
     font1Light,
@@ -40,6 +40,8 @@ export default function Texts({
     font2Medium,
     font2Bold,
     font2ExtraBold,
+
+    isWhite,
 
     style,
 
@@ -69,8 +71,8 @@ export default function Texts({
                 textColor1 && appStyles.textColor1,
                 textColor2 && appStyles.textColor2,
                 textColor3 && appStyles.textColor3,
-                textColor4 && appStyles.textColor4,
                 textColor5 && appStyles.textColor5,
+                textColor6 && appStyles.textColor6,
 
                 font1Regular && appStyles.textFont1Regular,
                 font1Light && appStyles.textFont1Light,
@@ -82,6 +84,8 @@ export default function Texts({
                 font2Medium && appStyles.textFont2Medium,
                 font2Bold && appStyles.textFont2Bold,
                 font2ExtraBold && appStyles.textFont2ExtraBold,
+
+                isWhite && appStyles.textWhite,
 
                 style
             ]}
