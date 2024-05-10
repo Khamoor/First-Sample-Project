@@ -33,13 +33,15 @@ export default function Index({ navigation }) {
                         title={'Phone'}
                         value={'0973-4444-52899'}
                         onChangeText={() => { }}
-                        containerStyle={{marginHorizontal:width(8)}}    // Changing size of Input Container
+                        containerStyle={{ marginHorizontal: width(8) }}    // Changing size of Input Container
                     />
                     {/* Spacer */}
                     <Spacer isBasic />
                     {/* Bottom Text */}
                     <View style={{ marginHorizontal: width(10) }}>
-                        <Texts isSmall textColor5 font2Light style={[{ textAlign: 'right' }]}>
+                        <Texts
+                            onPress={() => navigate('createAccount')}
+                            isSmall textColor5 font2Light style={[{ textAlign: 'right' }]}>
                             Do not have an account?
                             {' '}
                             <Texts font2Bold>Create</Texts>
