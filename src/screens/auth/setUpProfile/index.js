@@ -3,9 +3,10 @@ import { Buttons, Common, Headers, Scrollviews, Spacer, Textinputs, Texts, Wrapp
 import { Image } from '@rneui/base'
 import { appIcons, appStyles, colors, fontSizes } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
+import { routes } from '../../../services'
 
 export default function Index({ navigation }) {
-    const { goBack } = navigation
+    const { goBack, navigate } = navigation
     return (
         <Wrapper isMain>
             {/* Displaying the Title  */}
@@ -75,6 +76,7 @@ export default function Index({ navigation }) {
                             title={'DONE'}
                             shadowWhite
                             containerStyle={{ marginHorizontal: width(15) }}
+                            onPress={() => navigate(routes.app)}    // Adding 'routes.app' on press button
                         />
                         <Spacer isLarge />
                     </Scrollviews.KeyboardAvoiding>
