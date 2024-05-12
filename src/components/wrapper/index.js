@@ -7,6 +7,7 @@ export default function Wrapper({
     flex,
     isMain,
     center,
+    alignItemsCenter,
     style,
 }) {
     return (
@@ -17,6 +18,7 @@ export default function Wrapper({
                 },
                 isMain && appStyles.mainContainer,
                 center && appStyles.center,
+                alignItemsCenter && { alignItems: 'center' },
                 style
             ]}
         >
