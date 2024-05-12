@@ -42,6 +42,7 @@ export default function Texts({
     font2ExtraBold,
 
     isWhite,
+    alignCenter,
 
     style,
 
@@ -86,6 +87,7 @@ export default function Texts({
                 font2ExtraBold && appStyles.textFont2ExtraBold,
 
                 isWhite && appStyles.textWhite,
+                alignCenter && {textAlign: 'center'},
 
                 style
             ]}
