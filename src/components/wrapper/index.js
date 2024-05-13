@@ -14,7 +14,11 @@ export default function Wrapper({
     marginHorizontalTiny,
 
     flexDirectionRow,
+    // Align Items
     alignItemsCenter,
+    // Justify Contents
+    justifyContentCenter,
+
     style,
 }) {
     return (
@@ -32,6 +36,8 @@ export default function Wrapper({
 
                 flexDirectionRow && { flexDirection: 'row' },
                 alignItemsCenter && { alignItems: 'center' },
+                justifyContentCenter && { justifyContent: 'center' },
+                
                 style
             ]}
         >
