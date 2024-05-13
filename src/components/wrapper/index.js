@@ -18,6 +18,7 @@ export default function Wrapper({
     alignItemsCenter,
     // Justify Contents
     justifyContentCenter,
+    justifyContentSpaceBetween,
 
     style,
 }) {
@@ -37,7 +38,8 @@ export default function Wrapper({
                 flexDirectionRow && { flexDirection: 'row' },
                 alignItemsCenter && { alignItems: 'center' },
                 justifyContentCenter && { justifyContent: 'center' },
-                
+                justifyContentSpaceBetween && { justifyContent: 'space-between' },
+
                 style
             ]}
         >
