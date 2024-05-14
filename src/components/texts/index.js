@@ -87,11 +87,11 @@ export default function Texts({
                 font2ExtraBold && appStyles.textFont2ExtraBold,
 
                 isWhite && appStyles.textWhite,
-                alignCenter && {textAlign: 'center'},
+                alignCenter && { textAlign: 'center' },
 
                 style
             ]}
             {...props}
-        > {children}</Text>
+        >{children}</Text>
     )
 }
