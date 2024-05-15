@@ -14,4 +14,5 @@ export const colors = {
 
     // Background Colors
     appBackgrounColor1: '#FFFFFF',
+    appBackgrounColor2: '#F7F7F7',
 }
