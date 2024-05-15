@@ -11,6 +11,7 @@ export const colors = {
     appTextColor4: '#FFFFFF',   // White
     appTextColor5: '#FFFFC8',   // Shade of Light Yellow
     appTextColor6: '#444444D4',
+    appTextColor7: '#444444CC',
 
     // Background Colors
     appBackgrounColor1: '#FFFFFF',
