@@ -5,6 +5,7 @@ import * as Scrollviews from './scrollviews'
 import * as Textinputs from './textinputs'
 import * as Buttons from './buttons'
 import * as Headers from './headers'
+import * as Icons from './icons'
 import * as Common from './common'
 
-export { Texts, Spacer, Scrollviews, Textinputs, Buttons, Wrapper, Headers, Common }
+export { Texts, Spacer, Scrollviews, Textinputs, Buttons, Wrapper, Headers, Icons, Common }
