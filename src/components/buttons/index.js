@@ -10,8 +10,11 @@ export function ColoredGradient({
     containerStyle, // Additional styles for the button container
     onPress,        // Function to be called when the button is pressed
     gradientStyle,  // Additional styles for the gradient background
+    gradientColors, // Color used for creating linear gradient
+    notGradient,    // Color used for not creating linear gradient
     shadowWhite,    // A boolena flag indicating whether to apply a white shadow around the button
 }) {
+    const _colors = notGradient ? [colors.appColor1, colors.appColor1] : gradientColors || colors.appGradient1
     return (
         // Component is wrapped in a 'Pressable' component to make it pressable. It triggers the 'onPress' function when pressed
         <Pressable onPress={onPress} style={[{
@@ -22,10 +25,10 @@ export function ColoredGradient({
         shadowWhite && [appStyles.shadowDark, { shadowColor: colors.appBackgrounColor1 }],
             containerStyle]}>
             <LinearGradient
+                colors={_colors}
                 //          Top     Left             Top    Right
                 start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 0.0 }}
                 // locations={[0.5, 0.5]}
-                colors={colors.appGradient1}
                 useAngle={true} // Enabling Angle
                 angle={90}  // Gradient 90 degree Angle
                 angleCenter={{ x: 0.5, y: 0.5 }}    // Gradient starts at center of button
