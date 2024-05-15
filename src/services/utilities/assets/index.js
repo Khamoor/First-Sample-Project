@@ -5,4 +5,5 @@ export const appImages = {
 export const appIcons = {
     calendar: require('../../../assets/icons/calendar.png'),
     user: require('../../../assets/icons/user.png'),
+    location: require('../../../assets/icons/location.png'),
 }
