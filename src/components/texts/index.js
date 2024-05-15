@@ -30,6 +30,7 @@ export default function Texts({
     textColor5,
     textColor6,
     textColor7,
+    textColor8,
 
     font1Regular,
     font1Light,
@@ -76,6 +77,7 @@ export default function Texts({
                 textColor5 && appStyles.textColor5,
                 textColor6 && appStyles.textColor6,
                 textColor7 && appStyles.textColor7,
+                textColor8 && appStyles.textColor8,
 
                 font1Regular && appStyles.textFont1Regular,
                 font1Light && appStyles.textFont1Light,
