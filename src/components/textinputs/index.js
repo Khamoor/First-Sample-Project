@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, TextInput, View } from 'react-native'
-import { colors, fontSizes, fonts } from '../../services/utilities'
+import { appStyles, colors, fontSizes, fonts } from '../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
 import Wrapper from '../wrapper'
 
@@ -39,5 +39,24 @@ export function Colored({
                 }
             </Wrapper>
         </View>
+    )
+}
+
+export function ColoredSecondary({ containerStyle, inputStyle, ...props }) {
+    return (
+        <Wrapper style={[{
+            backgroundColor: colors.appBackgrounColor4,
+            borderRadius: 5
+        },
+            // appStyles.shadowExtralight,
+            containerStyle
+        ]}>
+            <TextInput
+                // placeholder='Search here'
+                placeholderTextColor={colors.appTextColor10}
+                style={[{ height: height(5), paddingHorizontal: width(4), fontFamily: fonts.appFont2Light, fontSize: fontSizes.small }, inputStyle]}
+                {...props}
+            />
+        </Wrapper>
     )
 }
