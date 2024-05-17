@@ -6,13 +6,14 @@ import Texts from '../texts'
 import { height, width, totalSize } from 'react-native-dimension'
 
 export function ColoredGradient({
-    title,          // text displayed on the button
+    title,          // Text displayed on the button
     containerStyle, // Additional styles for the button container
     onPress,        // Function to be called when the button is pressed
     gradientStyle,  // Additional styles for the gradient background
     gradientColors, // Color used for creating linear gradient
     notGradient,    // Color used for not creating linear gradient
     shadowWhite,    // A boolena flag indicating whether to apply a white shadow around the button
+    titleStyle,     // For Applying Style on title
 }) {
     const _colors = notGradient ? [colors.appColor1, colors.appColor1] : gradientColors || colors.appGradient1
     return (
@@ -40,7 +41,7 @@ export function ColoredGradient({
                 },
                     gradientStyle
                 ]}>
-                <Texts isMedium font1bold>
+                <Texts isMedium font1bold style={titleStyle}>
                     {title}
                 </Texts>
             </LinearGradient>
