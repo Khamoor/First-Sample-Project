@@ -6,4 +6,5 @@ export const appIcons = {
     calendar: require('../../../assets/icons/calendar.png'),
     user: require('../../../assets/icons/user.png'),
     location: require('../../../assets/icons/location.png'),
+    location_2: require('../../../assets/icons/location_2.png'),
 }
