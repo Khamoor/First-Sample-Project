@@ -1,5 +1,6 @@
 export const colors = {
     appGradient1: ['#FFFFFF', '#FFFFCC'],   // Gradient from White to Light Yellow
+    appGradient2: ['#212109', '#000000'],
     // App Colors
     appColor1: '#FFFFC8',   // Light Yellow
     appColor2: '#FFFFCC',
