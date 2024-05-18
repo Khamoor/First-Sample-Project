@@ -17,6 +17,7 @@ export default function Wrapper({
     marginHorizontalBase,
     marginHorizontalSmall,
     marginHorizontalTiny,
+    marginHorizontalZero,
 
     // Padding Horizontal
     paddingHorizontalLarge,
@@ -24,6 +25,7 @@ export default function Wrapper({
     paddingHorizontalBase,
     paddingHorizontalSmall,
     paddingHorizontalTiny,
+    paddingHorizontalZero,
 
     flexDirectionRow,
     // Align Items
@@ -52,6 +54,7 @@ export default function Wrapper({
                 marginHorizontalBase && { marginHorizontal: width(5) },
                 marginHorizontalSmall && { marginHorizontal: width(2.5) },
                 marginHorizontalTiny && { marginHorizontal: width(1.25) },
+                marginHorizontalZero && { marginHorizontal: 0 },
 
                 // Padding Horizontal
                 paddingHorizontalLarge && { paddingHorizontal: width(10) },
@@ -59,6 +62,7 @@ export default function Wrapper({
                 paddingHorizontalBase && { paddingHorizontal: width(5) },
                 paddingHorizontalSmall && { paddingHorizontal: width(2.5) },
                 paddingHorizontalTiny && { paddingHorizontal: width(1.25) },
+                paddingHorizontalZero && { paddingHorizontal: 0 },
 
                 flexDirectionRow && { flexDirection: 'row' },
                 alignItemsCenter && { alignItems: 'center' },
