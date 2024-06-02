@@ -27,6 +27,22 @@ export default function Wrapper({
     paddingHorizontalTiny,
     paddingHorizontalZero,
 
+    // Margin Vertical
+    marginVerticalLarge,
+    marginVerticalMedium,
+    marginVerticalBase,
+    marginVerticalSmall,
+    marginVerticalTiny,
+    marginVerticalZero,
+
+    // Padding Vertical
+    paddingVerticalLarge,
+    paddingVerticalMedium,
+    paddingVerticalBase,
+    paddingVerticalSmall,
+    paddingVerticalTiny,
+    paddingVerticalZero,
+
     flexDirectionRow,
     // Align Items
     alignItemsCenter,
@@ -63,6 +79,22 @@ export default function Wrapper({
                 paddingHorizontalSmall && { paddingHorizontal: width(2.5) },
                 paddingHorizontalTiny && { paddingHorizontal: width(1.25) },
                 paddingHorizontalZero && { paddingHorizontal: 0 },
+
+                // Margin Vertical
+                marginVerticalLarge && { marginVertical: width(5) },
+                marginVerticalMedium && { marginVertical: width(3.75) },
+                marginVerticalBase && { marginVertical: width(2.5) },
+                marginVerticalSmall && { marginVertical: width(1.25) },
+                marginVerticalTiny && { marginVertical: width(0.625) },
+                marginVerticalZero && { marginVertical: 0 },
+
+                // Padding Vertical
+                paddingVerticalLarge && { paddingVertical: width(5) },
+                paddingVerticalMedium && { paddingVertical: width(3.75) },
+                paddingVerticalBase && { paddingVertical: width(2.5) },
+                paddingVerticalSmall && { paddingVertical: width(1.25) },
+                paddingVerticalTiny && { paddingVertical: width(0.625) },
+                paddingVerticalZero && { paddingVertical: 0 },
 
                 flexDirectionRow && { flexDirection: 'row' },
                 alignItemsCenter && { alignItems: 'center' },
