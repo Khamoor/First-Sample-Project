@@ -139,6 +139,9 @@ export const appStyles = StyleSheet.create({
     textColor10: {
         color: colors.appTextColor10
     },
+    textColor11: {
+        color: colors.appTextColor11
+    },
 
     // Shadows
     shadowExtralight: {
