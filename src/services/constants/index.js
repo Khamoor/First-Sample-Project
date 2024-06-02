@@ -9,6 +9,7 @@ export const routes = {
     // App
     app: 'app',
     bottomTab: 'bottomTab',
+    homeTab: 'homeTab',
     home: 'home',
     menu: 'menu',
     editProfile: 'editProfile',
