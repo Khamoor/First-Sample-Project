@@ -12,4 +12,5 @@ export const routes = {
     home: 'home',
     menu: 'menu',
     editProfile: 'editProfile',
+    vehicleInfo: 'vehicleInfo',
 }
