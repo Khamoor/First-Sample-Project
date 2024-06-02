@@ -10,7 +10,7 @@ export default function Spacer({ isBasic, isSmall, isTiny, isLarge, height, widt
     return (
         <View
             style={{
-                height: !isHorizontal && defaultHeight,
+                height: (!isHorizontal || height) && defaultHeight,
                 width: (isHorizontal || width) && defaultWidth,
             }}
         />
