@@ -1,13 +1,27 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EditProfile, Home, Menu } from '../../screens/app';
+import { EditProfile, Home, Menu, VehicleInfo } from '../../screens/app';
 import { routes } from '../../services';
 import { colors, appStyles, appIcons } from '../../services/utilities';
 import { Icon, Image } from '@rneui/base';
 import { totalSize } from 'react-native-dimension';
 
 const Tab = createBottomTabNavigator();
+const HomeStack = createNativeStackNavigator();
 const AppStack = createNativeStackNavigator();
+
+function HomeNavigation() {
+    return (
+        <HomeStack.Navigator
+            screenOptions={{ headerShown: false }}
+        >
+            {/* MyTabs is the Main Screen */}
+            <HomeStack.Screen name={routes.home} component={Home} />
+            {/* Menu is Snother Screen */}
+            <HomeStack.Screen name={routes.vehicleInfo} component={VehicleInfo} />
+        </HomeStack.Navigator>
+    );
+}
 
 // Defines a Bottom Tab Navigator with Two Tabs
 function MyTabs() {
@@ -20,7 +34,9 @@ function MyTabs() {
             }}
         >
             {/* Home Tab */}
-            <Tab.Screen name={routes.home} component={Home}
+            <Tab.Screen
+                name={routes.homeTab}
+                component={HomeNavigation}
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: () => {
