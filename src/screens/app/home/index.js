@@ -5,6 +5,7 @@ import { colors, appStyles, fontSizes, appIcons } from '../../../services/utilit
 import { height, width, totalSize } from 'react-native-dimension'
 import { Icon } from '@rneui/base'
 import AddLocation from './addLocation'
+import OilType from './oilType'
 
 export default function Index() {
     const days = [
@@ -33,8 +34,12 @@ export default function Index() {
     const [hour, setHour] = useState('05')
     const [minute, setMinute] = useState('00')
     const [am, setAm] = useState('am')
+
     const [isAddLocationPropupVisible, setAddLocationPropupVisibility] = useState(false)
     const toggleAddLocationPopup = () => setAddLocationPropupVisibility(prev => !prev)
+
+    const [isOilTypePropupVisible, setOilTypePropupVisibility] = useState(false)
+    const toggleOilTypePopup = () => setOilTypePropupVisibility(prev => !prev)
     return (
         <Wrapper isMain>
             <Headers.Secondary
@@ -89,7 +94,7 @@ export default function Index() {
                 </Pressable>
                 <Spacer isBasic />
                 <Pressable
-                    onPress={() => { }}
+                    onPress={toggleOilTypePopup}
                 >
                     <Wrapper
                         isColored
@@ -124,6 +129,10 @@ export default function Index() {
             <AddLocation
                 isVisible={isAddLocationPropupVisible}
                 toggle={toggleAddLocationPopup}
+            />
+            <OilType
+                isVisible={isOilTypePropupVisible}
+                toggle={toggleOilTypePopup}
             />
         </Wrapper>
     )
