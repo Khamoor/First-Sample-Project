@@ -6,8 +6,11 @@ import { height, width, totalSize } from 'react-native-dimension'
 import { Icon } from '@rneui/base'
 import AddLocation from './addLocation'
 import OilType from './oilType'
+import { routes } from '../../../services'
 
-export default function Index() {
+export default function Index({ navigation }) {
+    const { navigate } = navigation
+
     const days = [
         {
             label: 'Today',
@@ -122,6 +125,7 @@ export default function Index() {
                         title={'Lock it in!'}
                         notGradient
                         containerStyle={[appStyles.shadow]}
+                        onPress={() => navigate(routes.vehicleInfo)}
                     />
                 </Wrapper>
                 <Spacer isBasic />
