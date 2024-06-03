@@ -14,6 +14,7 @@ export default function Wrapper({
     isBordered,
 
     // Margin Horizontal
+    marginHorizontalXLarge,
     marginHorizontalLarge,
     marginHorizontalMedium,
     marginHorizontalBase,
@@ -68,6 +69,7 @@ export default function Wrapper({
                 backgroundColor2 && { backgroundColor: colors.appBackgrounColor2 },
 
                 // Margin Horizontal
+                marginHorizontalXLarge && { marginHorizontal: width(12) },
                 marginHorizontalLarge && { marginHorizontal: width(10) },
                 marginHorizontalMedium && { marginHorizontal: width(7.5) },
                 marginHorizontalBase && { marginHorizontal: width(5) },
