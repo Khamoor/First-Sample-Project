@@ -8,6 +8,8 @@ export default function Wrapper({
     flex,
     isMain,
     center,
+    backgroundColor1,
+    backgroundColor2,
     isColored,
     isBordered,
 
@@ -60,9 +62,10 @@ export default function Wrapper({
                 },
                 isMain && appStyles.mainContainer,
                 center && appStyles.center,
-
                 isColored && styles.colored,
                 isBordered && styles.bordered,
+                backgroundColor1 && { backgroundColor: colors.appBackgrounColor1 },
+                backgroundColor2 && { backgroundColor: colors.appBackgrounColor2 },
 
                 // Margin Horizontal
                 marginHorizontalLarge && { marginHorizontal: width(10) },
