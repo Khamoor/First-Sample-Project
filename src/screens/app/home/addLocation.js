@@ -11,7 +11,10 @@ export default function AddLocation({ isVisible, toggle }) {
             onBackdropPress={toggle}
             style={{ margin: 0 }}
         >
-            <Wrapper isColored>
+            <Wrapper
+                backgroundColor1
+                isColored
+            >
                 <Wrapper
                     style={{
                         marginTop: -(width(17.5))
