@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
-import { Buttons, Headers, Icons, Scrollviews, Spacer, Textinputs, Texts, Wrapper } from '../../../components'
-import { appStyles, colors } from '../../../services/utilities'
+import { Buttons, Common, Headers, Icons, Scrollviews, Spacer, Textinputs, Texts, Wrapper } from '../../../components'
+import { appImages, appStyles, colors } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
+import Modal from 'react-native-modal'
+import { Image, StyleSheet } from 'react-native'
+import { Icon } from '@rneui/base'
+import { routes } from '../../../services'
 
-export default function Index() {
+export default function Index({ navigation }) {
+    const { navigate } = navigation
+
     const [isChecked, setChecked] = useState(false)
+
+    const [isConfirmationPopupVisible, setConfirmationPopupVisibility] = useState(false)
+
+    const toggleConfirmationPopup = () => setConfirmationPopupVisibility(pv => !pv)
 
     return (
         <Wrapper isMain>
@@ -53,7 +63,7 @@ export default function Index() {
                             iconType={''}
                             onPress={() => setChecked(prev => !prev)}
                         />
-                        <Spacer isSmall isHorizontal/>
+                        <Spacer isSmall isHorizontal />
                         <Wrapper flex={1}>
                             <Texts isSmall font1Medium>Pull info from profile here</Texts>
                         </Wrapper>
@@ -65,10 +75,21 @@ export default function Index() {
                         title={'ADD'}
                         gradientColors={colors.appGradient3}
                         titleStyle={[appStyles.textWhite]}
+                        onPress={toggleConfirmationPopup}
                     />
                 </Wrapper>
                 <Spacer isBasic />
             </Scrollviews.KeyboardAvoiding>
+            <Common.PopupPrimary
+                isVisible={isConfirmationPopupVisible}
+                toggle={toggleConfirmationPopup}
+                title="Vehicle has been added successfully! One step left!"
+                onPressButton={() => {
+                    toggleConfirmationPopup()
+                    navigate(routes.selectPriceAndPaymentMethod)
+                }}
+                buttonText="CONTINUE"
+            />
         </Wrapper>
     )
 }
