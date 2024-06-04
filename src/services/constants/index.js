@@ -1,5 +1,4 @@
 export const routes = {
-
     // Auth
     auth: 'auth',
     login: 'login',
@@ -14,4 +13,5 @@ export const routes = {
     menu: 'menu',
     editProfile: 'editProfile',
     vehicleInfo: 'vehicleInfo',
+    selectPriceAndPaymentMethod: 'selectPriceAndPaymentMethod',
 }
