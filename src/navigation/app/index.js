@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EditProfile, Home, Menu, VehicleInfo } from '../../screens/app';
+import { EditProfile, Home, Menu, SelectPriceAndPaymentMethod, VehicleInfo } from '../../screens/app';
 import { routes } from '../../services';
 import { colors, appStyles, appIcons } from '../../services/utilities';
 import { Icon, Image } from '@rneui/base';
@@ -15,10 +15,12 @@ function HomeNavigation() {
         <HomeStack.Navigator
             screenOptions={{ headerShown: false }}
         >
-            {/* MyTabs is the Main Screen */}
+            {/* Home is the Main Screen */}
             <HomeStack.Screen name={routes.home} component={Home} />
-            {/* Menu is Snother Screen */}
+            {/* Vehincle Info is another Screen */}
             <HomeStack.Screen name={routes.vehicleInfo} component={VehicleInfo} />
+            {/* SelectPriceAndPaymentMethod Info is another Screen */}
+            <HomeStack.Screen name={routes.selectPriceAndPaymentMethod} component={SelectPriceAndPaymentMethod} />
         </HomeStack.Navigator>
     );
 }
@@ -82,7 +84,7 @@ export default function AppNavigation() {
         >
             {/* MyTabs is the Main Screen */}
             <AppStack.Screen name={routes.bottomTab} component={MyTabs} />
-            {/* Menu is Snother Screen */}
+            {/* Menu is another Screen */}
             <AppStack.Screen name={routes.menu} component={Menu} />
         </AppStack.Navigator>
     );
