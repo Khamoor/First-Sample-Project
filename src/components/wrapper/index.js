@@ -47,6 +47,7 @@ export default function Wrapper({
     paddingVerticalZero,
 
     flexDirectionRow,
+    flexWrapWrap,
     // Align Items
     alignItemsCenter,
     // Justify Contents
@@ -102,6 +103,7 @@ export default function Wrapper({
                 paddingVerticalZero && { paddingVertical: 0 },
 
                 flexDirectionRow && { flexDirection: 'row' },
+                flexWrapWrap && { flexWrap: 'wrap' },
                 alignItemsCenter && { alignItems: 'center' },
                 justifyContentCenter && { justifyContent: 'center' },
                 justifyContentSpaceBetween && { justifyContent: 'space-between' },
