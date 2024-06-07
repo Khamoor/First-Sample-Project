@@ -13,4 +13,5 @@ export const appIcons = {
     user: require('../../../assets/icons/user.png'),
     location: require('../../../assets/icons/location.png'),
     location_2: require('../../../assets/icons/location_2.png'),
+    payment: require('../../../assets/icons/payment.png'),
 }
