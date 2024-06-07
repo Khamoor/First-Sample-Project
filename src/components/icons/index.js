@@ -9,6 +9,7 @@ export const Custom = ({ onPress, source, size, style }) => {
     return (
         <Pressable
             onPress={onPress}
+            disabled={!onPress}
         >
             <Image
                 source={source}
