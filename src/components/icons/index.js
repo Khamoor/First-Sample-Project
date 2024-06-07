@@ -37,7 +37,12 @@ export const Button = ({
     return (
         <Pressable
             onPress={onPress}
-            style={containerStyle}
+            style={[
+                {
+                    borderRadius: 100,
+                    backgroundColor: colors.appBackgrounColor1
+                },
+                containerStyle]}
         >
             <LinearGradient
                 colors={gradientColors || colors.appGradient2}
