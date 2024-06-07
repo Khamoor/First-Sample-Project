@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Common, Headers, Icons, Spacer, Texts, Wrapper } from '../../../components'
 import { appImages, appStyles, colors } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
+import { Pressable } from 'react-native'
+import AddPaymentDetails from './addPaymentDetails'
 
 export default function Index({ navigation }) {
     const { goBack } = navigation
@@ -34,6 +36,10 @@ export default function Index({ navigation }) {
     ]
 
     const topCardBorderRadius = 30
+
+    const [isAddPaymentDetailsPopupVisible, setAddPaymentDetailsPopupVisibility] = useState(false)
+    const toggleAddPaymentDetailsPopup = () => setAddPaymentDetailsPopupVisibility(pv => !pv)
+
     return (
         <Wrapper isMain>
             <Headers.Primary
@@ -79,15 +85,22 @@ export default function Index({ navigation }) {
                     <Spacer isBasic />
                     <PaymentMethods
                         data={paymentMethods}
-                        onPreseItem={(item, index) => { }}
+                        onPreseItem={(item, index) => {
+                            console.log('item: ', item)
+                            toggleAddPaymentDetailsPopup()
+                        }}
                     />
                 </Common.BgImageWrapper>
             </Wrapper>
+            <AddPaymentDetails
+                isVisible={isAddPaymentDetailsPopupVisible}
+                toggle={toggleAddPaymentDetailsPopup}
+            />
         </Wrapper>
     )
 }
 
-const PaymentMethods = ({ data, onPreseItem }) => {
+const PaymentMethods = ({ data, onPressItem }) => {
     return (
         <Wrapper marginHorizontalMedium flexDirectionRow alignItemsCenter flexWrapWrap justifyContentSpaceBetween>
             {
@@ -95,20 +108,24 @@ const PaymentMethods = ({ data, onPreseItem }) => {
                     const itemSize = width(25)
                     return (
                         <React.Fragment key={index} >
-                            <Wrapper
-                                isColored
-                                marginHorizontalZero
-                                paddingHorizontalZero
-                                paddingVerticalZero
-                                marginVerticalBase
-                                center
-                                style={[{ height: itemSize, width: itemSize }, appStyles.shadowDark, { shadowColor: colors.appBackgrounColor1 }]}
+                            <Pressable
+                                onPress={() => onPressItem(item, index)}
                             >
-                                <Icons.Custom
-                                    source={item.logo}
-                                    size={itemSize - width(5)}
-                                />
-                            </Wrapper>
+                                <Wrapper
+                                    isColored
+                                    marginHorizontalZero
+                                    paddingHorizontalZero
+                                    paddingVerticalZero
+                                    marginVerticalBase
+                                    center
+                                    style={[{ height: itemSize, width: itemSize }, appStyles.shadowDark, { shadowColor: colors.appBackgrounColor1 }]}
+                                >
+                                    <Icons.Custom
+                                        source={item.logo}
+                                        size={itemSize - width(5)}
+                                    />
+                                </Wrapper>
+                            </Pressable>
                         </React.Fragment>
                     )
                 })
