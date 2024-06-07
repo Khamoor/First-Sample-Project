@@ -5,6 +5,7 @@ export const colors = {
     // App Colors
     appColor1: '#FFFFC8',   // Light Yellow
     appColor2: '#FFFFCC',
+    appColor3: '#E3185A24',
 
     // Text Colors
     appTextColor1: '#000000',   // Black
