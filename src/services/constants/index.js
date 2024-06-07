@@ -14,4 +14,5 @@ export const routes = {
     editProfile: 'editProfile',
     vehicleInfo: 'vehicleInfo',
     selectPriceAndPaymentMethod: 'selectPriceAndPaymentMethod',
+    shareFeedback: 'shareFeedback'
 }
