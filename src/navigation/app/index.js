@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EditProfile, Home, Menu, SelectPriceAndPaymentMethod, VehicleInfo } from '../../screens/app';
+import { EditProfile, Home, Menu, SelectPriceAndPaymentMethod, ShareFeedback, VehicleInfo } from '../../screens/app';
 import { routes } from '../../services';
 import { colors, appStyles, appIcons } from '../../services/utilities';
 import { Icon, Image } from '@rneui/base';
@@ -86,6 +86,8 @@ export default function AppNavigation() {
             <AppStack.Screen name={routes.bottomTab} component={MyTabs} />
             {/* Menu is another Screen */}
             <AppStack.Screen name={routes.menu} component={Menu} />
+            {/* ShareFeedback is another Screen */}
+            <AppStack.Screen name={routes.shareFeedback} component={ShareFeedback} />
         </AppStack.Navigator>
     );
 }
