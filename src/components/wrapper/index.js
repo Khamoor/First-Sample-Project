@@ -53,6 +53,7 @@ export default function Wrapper({
     // Justify Contents
     justifyContentCenter,
     justifyContentSpaceBetween,
+    justifyContentSpaceEvenly,
 
     style,
 }) {
@@ -107,6 +108,7 @@ export default function Wrapper({
                 alignItemsCenter && { alignItems: 'center' },
                 justifyContentCenter && { justifyContent: 'center' },
                 justifyContentSpaceBetween && { justifyContent: 'space-between' },
+                justifyContentSpaceEvenly && { justifyContent: 'space-evenly' },
 
                 style
             ]}
