@@ -4,9 +4,10 @@ import { appImages, appStyles, colors } from '../../../services/utilities'
 import { height, width, totalSize } from 'react-native-dimension'
 import { Pressable } from 'react-native'
 import AddPaymentDetails from './addPaymentDetails'
+import { routes } from '../../../services'
 
 export default function Index({ navigation }) {
-    const { goBack } = navigation
+    const { goBack, navigate } = navigation
 
     const paymentMethods = [
         {
@@ -39,6 +40,9 @@ export default function Index({ navigation }) {
 
     const [isAddPaymentDetailsPopupVisible, setAddPaymentDetailsPopupVisibility] = useState(false)
     const toggleAddPaymentDetailsPopup = () => setAddPaymentDetailsPopupVisibility(pv => !pv)
+
+    const [isConfirmationPopupVisible, setConfirmationPopupVisibility] = useState(false)
+    const toggleConfirmationPopup = () => setConfirmationPopupVisibility(pv => !pv)
 
     return (
         <Wrapper isMain>
@@ -85,8 +89,8 @@ export default function Index({ navigation }) {
                     <Spacer isBasic />
                     <PaymentMethods
                         data={paymentMethods}
-                        onPreseItem={(item, index) => {
-                            console.log('item: ', item)
+                        onPressItem={(item, index) => {
+                            // console.log('item: ', item)
                             toggleAddPaymentDetailsPopup()
                         }}
                     />
@@ -95,6 +99,26 @@ export default function Index({ navigation }) {
             <AddPaymentDetails
                 isVisible={isAddPaymentDetailsPopupVisible}
                 toggle={toggleAddPaymentDetailsPopup}
+                onPressSave={() => {
+                    toggleAddPaymentDetailsPopup()
+                    setTimeout(() => {
+                        toggleConfirmationPopup()
+                    }, 500)
+                }}
+            />
+            <Common.PopupPrimary
+                isVisible={isConfirmationPopupVisible}
+                toggle={toggleConfirmationPopup}
+                title="Congratulations!"
+                titleStyle={[appStyles.h3, appStyles.textWhite]}
+                info
+                info1={'We will see you on\n'}
+                info2={'[DATE SCHEDULED]'}
+                onPressButton={() => {
+                    toggleConfirmationPopup()
+                    navigate(routes.shareFeedback)
+                }}
+                buttonText="CONTINUE"
             />
         </Wrapper>
     )
