@@ -19,6 +19,7 @@ export const colors = {
     appTextColor9: '#212109',
     appTextColor10: '#3A3A3A',
     appTextColor11: '#44444478',
+    appTextColor12: '#363636',
 
     // Background Colors
     appBackgrounColor1: '#FFFFFF',
