@@ -31,9 +31,11 @@ export const Button = ({
     iconName,       // Name of the icon (if using a predefined icon)
     iconType,       // Type of the icon (if using a predefined icon)
     containerStyle, // Additional styles for the pressable container
+    buttonColor,    // Color of the Button
 }) => {
     const defaultButtonSize = buttonSize || totalSize(5)    // Default button size if not provided
     const defaultIconSize = iconSize || totalSize(3.5)      // Default icon size if not provided
+    const defaultColors = buttonColor ? [buttonColor, buttonColor] : gradientColors || colors.appGradient2
     return (
         <Pressable
             onPress={onPress}
@@ -45,7 +47,7 @@ export const Button = ({
                 containerStyle]}
         >
             <LinearGradient
-                colors={gradientColors || colors.appGradient2}
+                colors={defaultColors}
                 style={[{ height: defaultButtonSize, width: defaultButtonSize, borderRadius: 100, alignItems: 'center', justifyContent: 'center' }, buttonStyle]}
             >
                 {
