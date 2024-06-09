@@ -20,7 +20,7 @@ export function BgImageWrapper({ children }) {
     )
 }
 
-export const PopupPrimary = ({ isVisible, toggle, title, onPressButton, buttonText }) => {
+export const PopupPrimary = ({ isVisible, toggle, title, info, info1, info2, onPressButton, buttonText, titleStyle }) => {
     return (
         <ReactNativeModal
             isVisible={isVisible}
@@ -48,13 +48,25 @@ export const PopupPrimary = ({ isVisible, toggle, title, onPressButton, buttonTe
                 />
                 <Spacer isLarge />
                 <Wrapper marginHorizontalXLarge>
-                    <Texts isH5 isWhite alignCenter>{title}</Texts>
+                    <Texts isH5 isWhite alignCenter style={titleStyle}>{title}</Texts>
+                    {
+                        info ?
+                            <>
+                                <Spacer isBasic />
+                                <Texts isH5 isWhite alignCenter font1Medium>
+                                    {info1}
+                                    <Texts isH6 isWhite alignCenter font1Medium>{info2}</Texts>
+                                </Texts>
+                            </>
+                            : null
+                    }
                 </Wrapper>
                 <Spacer isLarge />
                 <Wrapper marginHorizontalXLarge>
                     <Buttons.ColoredGradient
                         title={buttonText || 'Button'}
                         onPress={onPressButton}
+                        shadowWhite
                     />
                 </Wrapper>
             </Wrapper>
