@@ -1,4 +1,6 @@
 export const colors = {
+    transparent: '#FFFFFF00',
+
     appGradient1: ['#FFFFFF', '#FFFFCC'],   // Gradient from White to Light Yellow
     appGradient2: ['#212109', '#000000'],
     appGradient3: ['#293D3D', '#000000'],
@@ -29,4 +31,5 @@ export const colors = {
     appBackgrounColor4: '#F5F5F5',
     appBackgrounColor5: '#CCCCCC25',
     appBackgrounColor6: '#E9E9E9',
+    appBackgrounColor7: '#000000',
 }
