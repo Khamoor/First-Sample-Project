@@ -8,7 +8,7 @@ export function KeyboardAvoiding({ children, ...props }) {
             behavior={Platform.OS === 'ios' ? 'padding' : null}
         >
             <ScrollView
-            showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
                 {...props}
             >
                 {children}
