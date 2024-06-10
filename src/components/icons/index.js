@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Icon } from '@rneui/base';
 import { colors } from '../../services/utilities';
 
-export const Custom = ({ onPress, source, size, style }) => {
+export const Custom = ({ onPress, source, size, style, color }) => {
     const defaultSize = size || totalSize(2.5)  // Default size if not provided
     return (
         <Pressable
@@ -13,7 +13,7 @@ export const Custom = ({ onPress, source, size, style }) => {
         >
             <Image
                 source={source}
-                style={[{ height: defaultSize, width: defaultSize }, style]}
+                style={[{ height: defaultSize, width: defaultSize, tintColor: color }, style]}
                 resizeMode="contain"
             />
         </Pressable>
