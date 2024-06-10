@@ -7,16 +7,19 @@ import Texts from '../texts'
 import Wrapper from '../wrapper'
 
 export function Primary({
+    containerStyle,
     title,          // Represents title text to be displayed in the header
+    titleStyle,     // Represents style for title text 
     onPressBack,    // Represents function to be executed when the back button is pressed. If provided, the back button will be rendered; otherwise, it will not be rendered
+    backIconColor,  // Represents color for Back Icon
 }) {
     return (
         <View
-            style={{
+            style={[{
                 paddingTop: height(5),
                 paddingBottom: height(2),
                 backgroundColor: colors.appBackgrounColor1,
-            }}
+            }, containerStyle]}
         >
             {/* It consists of a row layout wiht three child views */}
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -29,13 +32,14 @@ export function Primary({
                                 type='octicons'
                                 size={totalSize(3)}
                                 onPress={onPressBack}
+                                color={backIconColor}
                             />
                             :
                             null
                     }
                 </View>
                 <View style={{ flex: 1, alignItems: 'center' }}>
-                    <Texts isLarge font1bold>{title}</Texts>
+                    <Texts isLarge font1bold style={titleStyle}>{title}</Texts>
                 </View>
                 <View style={{ flex: 0.2 }}>
 
