@@ -5,6 +5,9 @@ import { routes } from '../../services';
 import { colors, appStyles, appIcons } from '../../services/utilities';
 import { Icon, Image } from '@rneui/base';
 import { totalSize } from 'react-native-dimension';
+import { useEffect, useState } from 'react';
+import { navigationRef } from '../rootNavigation';
+import { Icons } from '../../components';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -27,19 +30,51 @@ function HomeNavigation() {
 
 // Defines a Bottom Tab Navigator with Two Tabs
 function MyTabs() {
+    const [tab, setTab] = useState(routes.home)
+    useEffect(() => {
+        const unsubscribe = navigationRef?.current?.addListener('state', () => {
+            const currentRoute = navigationRef?.current?.getCurrentRoute()
+            if (currentRoute) {
+                // console.log('currentRoute: ', currentRoute)
+                setTab(currentRoute?.name)
+            }
+        });
+        return unsubscribe
+    })
+
+    const isEditProfileTab = tab === routes.editProfile
     return (
         <Tab.Navigator
-            screenOptions={{
+            screenOptions={({ route }) => ({
                 headerShown: false,
-                tabBarStyle: { backgroundColor: colors.appBackgrounColor1, borderTopWidth: 0, ...appStyles.shadowDark },
-                tabBarLabelStyle: [appStyles.textSmall],
-            }}
+                tabBarStyle: [
+                    isEditProfileTab
+                        ?
+                        {
+                            position: 'absolute',
+                            right: 0,
+                            left: 0,
+                            bottom: 0,
+                            backgroundColor: colors.appBackgrounColor7 + '80',
+                            borderTopWidth: 0
+                        }
+                        :
+                        { backgroundColor: colors.appBackgrounColor1, borderTopWidth: 0, ...appStyles.shadowDark }
+                ],
+                tabBarLabelStyle: [
+                    isEditProfileTab
+                        ?
+                        [appStyles.textSmall, appStyles.textPrimaryColor]
+                        :
+                        appStyles.textSmall
+                ],
+            })}
         >
             {/* Home Tab */}
             <Tab.Screen
                 name={routes.homeTab}
                 component={HomeNavigation}
-                options={{
+                options={({ route }) => ({
                     tabBarLabel: 'Home',
                     tabBarIcon: () => {
                         return (
@@ -47,30 +82,32 @@ function MyTabs() {
                                 name='home'
                                 type='feather'
                                 size={totalSize(2.5)}
+                                color={isEditProfileTab ? colors.appColor1 : colors.appTextColor1}
                             />
                         )
                     }
-                }}
+                })}
             />
             {/* Account Tab */}
             <Tab.Screen name={routes.editProfile} component={EditProfile}
-                options={{
+                options={({ route }) => ({
                     tabBarLabel: 'Account',
-                    tabBarIcon: () => {
+                    tabBarIcon: ({ focused }) => {
                         return (
-                            <Image
+                            <Icons.Custom
                                 source={appIcons.user}
-                                style={{ height: totalSize(2.5), width: totalSize(2.5) }}
-                                resizeMode='contain'
+                                size={totalSize(2.5)}
+                                color={focused ? colors.appColor1 : colors.appTextColor1}
                             />
-                            // <Icon
-                            //     name='home'
-                            //     type='feather'
-                            //     size={totalSize(2.5)}
-                            // />
                         )
                     }
-                }}
+                })}
+                listeners={({ navigation }) => ({
+                    tabPress: (e) => {
+                        e.preventDefault()
+                        navigation.navigate(routes.menu)
+                    }
+                })}
             />
         </Tab.Navigator>
     );
@@ -85,7 +122,7 @@ export default function AppNavigation() {
             {/* MyTabs is the Main Screen */}
             <AppStack.Screen name={routes.bottomTab} component={MyTabs} />
             {/* Menu is another Screen */}
-            <AppStack.Screen name={routes.menu} component={Menu} />
+            <AppStack.Screen name={routes.menu} component={Menu} options={{ presentation: 'transparentModal' }} />
             {/* ShareFeedback is another Screen */}
             <AppStack.Screen name={routes.shareFeedback} component={ShareFeedback} />
         </AppStack.Navigator>
