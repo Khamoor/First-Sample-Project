@@ -11,17 +11,18 @@ export default function Index({ navigation }) {
     const options = [
         { label: 'Edit Profile', value: 'editProfile', route: routes.editProfile },
         { label: 'Share Your Feedback', value: 'shareFeedback', route: routes.shareFeedback },
-        { label: 'Terms of Service', value: 'termsOfService', route: routes.editProfile },
-        { label: 'Privacy Policy', value: 'privacyPolicy', route: routes.editProfile },
+        { label: 'Terms of Service', value: 'termsOfService', route: routes.termsOfService },
+        { label: 'Privacy Policy', value: 'privacyPolicy', route: routes.privacyPolicy },
         { label: 'About Us', value: 'aboutUs', route: routes.shareFeedback },
-        { label: 'Logout', value: 'logout', route: null },
+        // { label: 'Logout', value: 'logout', route: null },
+        { label: 'Logout', value: 'logout', route: routes.auth },
     ]
 
     const handleOptionPress = (item, index) => {
         const { label, value, route } = item
         const isLogout = value === 'logout'
         if (isLogout) {
-            // Logout Logic
+            replace(route)
         }
         if (value === 'editProfile') {
             navigate(route)
