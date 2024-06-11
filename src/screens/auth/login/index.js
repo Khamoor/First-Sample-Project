@@ -52,7 +52,7 @@ export default function Index({ navigation }) {
                     {/* Button */}
                     <Buttons.ColoredGradient
                         title={'LUBE ME UP!'}
-                        onPress={() => { navigate('setUpProfile') }}   // When Button is Pressed it triggers navigation to the 'createAccount' screen
+                        onPress={() => { navigate('setUpProfile') }}   // When Button is Pressed it triggers navigation to the 'setUpProfile' screen
                         containerStyle={{ marginHorizontal: width(20) }}
                     />
                     {/* Spacer */}
