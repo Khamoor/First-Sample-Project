@@ -6,7 +6,7 @@ import { colors } from '../../../services/utilities'
 import { Pressable } from 'react-native'
 
 export default function Index({ navigation }) {
-    const { goBack } = navigation
+    const { navigate, goBack } = navigation
     const [passwordHidden, setPasswordHidden] = useState(true)
     const [isChecked, setChecked] = useState(false)
     return (
@@ -65,6 +65,7 @@ export default function Index({ navigation }) {
                     <Spacer height={height(10)} />
                     <Buttons.ColoredGradient
                         title={"Let's go!"}
+                        onPress={() => { navigate('setUpProfile') }}   // When Button is Pressed it triggers navigation to the 'setUpProfile' screen
                         containerStyle={{ marginHorizontal: width(10) }}
                     />
                     <Spacer isLarge />
