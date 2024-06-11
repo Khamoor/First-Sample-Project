@@ -22,7 +22,6 @@ export default function Index({ navigation }) {
                     {/* Component to handle keyboard avoidance */}
                     <Scrollviews.KeyboardAvoiding>
                         <Spacer isBasic />
-                        <Spacer isSmall />
                         <Textinputs.Colored
                             title={'First Name'}
                             value={'Mick'}
@@ -71,14 +70,14 @@ export default function Index({ navigation }) {
                             title={'Vehicle Mileage'}
                             placeholder={'If unknown enter approximate'}
                         />
-                        <Spacer isLarge />
+                        <Spacer isBasic />
                         <Buttons.ColoredGradient
                             title={'DONE'}
                             shadowWhite
                             containerStyle={{ marginHorizontal: width(15) }}
                             onPress={() => navigate(routes.app)}    // Adding 'routes.app' on press button
                         />
-                        <Spacer isLarge />
+                        <Spacer isBasic />
                     </Scrollviews.KeyboardAvoiding>
                 </Common.BgImageWrapper>
             </Wrapper>
